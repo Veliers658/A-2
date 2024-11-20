@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 학관 1층 - 든든, 에인트 </title>
+  <style>
+    /* 전체 페이지 기본 설정 */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 중앙 왼쪽 투명 영역 */
+    .hover-area.middle-left {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    /* 중앙 오른쪽 투명 영역 */
+    .hover-area.middle-right {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 100px;
+      height: 100px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    /* 드롭다운 스타일 */
+.dropdown {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: none;
+  z-index: 1;
+  max-height: 300px; /* 드롭다운 최대 높이 설정 */
+  overflow: auto; /* 넘치는 내용에 대해 스크롤바 생성 */
+}
+
+    /* 중앙 왼쪽 드롭다운 */
+    .hover-area.middle-left:hover + .dropdown.middle-left {
+      display: block;
+      top: 120px; /* 투명 영역 바로 아래 */
+      left: 10px;
+    }
+
+    /* 중앙 오른쪽 드롭다운 */
+    .hover-area.middle-right:hover + .dropdown.middle-right {
+      display: block;
+      bottom: 120px; /* 투명 영역 바로 위 */
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="CYWnav">
+      <div id="hamburger-icon">☰</div>
+      <!-- 햄버거 메뉴 아이콘 -->
+      <div class="nav-links">
+        <a href="club.html">Club</a>
+        <a href="map.html">Map</a>
+      </div>
+      <!--맵 영역-->
+      <input type="text" id="search-bar" placeholder="Search..." />
+      <!-- 검색 입력창 -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        
+        <!-- 동그라미 아이콘 -->
+      </div>
+      <div class="circle"></div>
+    </div>
+  </nav>
+  
+  <img src="./images/학관map.png" width="1000" height="600" usemap="#image-map" alt="HGU map">
+  <map name="image-map">
+  </map>
+  <script src="index.js"></script>
+
+  <!-- 왼쪽 위 투명 영역과 드롭다운 -->
+  <div class="hover-area middle-left"></div>
+  <div class="dropdown middle-left">든든한동 : 급식과 같이 밥, 국, 3~4가지의 반찬이 배식된다.<br>
+    운영일 : 월~일 (공휴일 포함) <br>
+    운영시간 :아침 : 08:00~09:00 (천원의 아침밥 선착순) / 점심 : 11:30~14:00 / 저녁 : 17:30~19:00 <br>
+    브레이크 타임 : 09:00~11:30 / 14:30~15:30 <br>
+    휴무일 : 없음 <br>
+    위치 : 학관 1층  <br>
+    </div>
+
+  <!-- 오른쪽 아래 투명 영역과 드롭다운 -->
+  <div class="hover-area middle-right"></div>
+  <div class="dropdown middle-right">Apple in the Tree : 한동대학교 학관에는 Apple in the Tree, 줄여서 에인트라는 카페가 있다. <br>
+    이곳은 다양한 커피와 음료, 베이커리가 있고, 가격이 싸다는 장점이 있다. 학생들이 가장 많이 이용하는 카페이기도 하다. <br>
+    
+    운영일 및 운영시간 : 월~금 : 08:30~18:30 / 일 : 11:00~18:00  <br>
+    브레이크 타임 : 14:30~15:30  <br>
+    휴무일 : 토요일 / 공휴일 <br>
+    위치 : 학관 1층  <br>
+  🍎Apple in the tree🌳 Menu : <br>
+Ice Coffee (아이스커피)<br>
+Ice Americano 아이스아메리카노<br>
+Venti Ice Americano 아이스벤티아메리카노<br>
+Ice Cafe Latte 아이스카페라떼<br>
+Venti Ice Cafe Latte 아이스벤티카페라떼<br>
+Ice Cafe Vienna 아이스카페비엔나<br>
+Ice Vanilla Latte 아이스바닐라라떼<br>
+Ice Hazelnut Latte 아이스헤이즐럿라떼<br>
+Ice Caramel Latte 아이스카라멜라떼<br>
+Ice Caramel Macchiato 아이스카라멜마끼아또<br>
+Ice Cafe Mocha 아이스카페모카<br>
+Ice Hazelnut Mocha 아이스헤이즐럿모카<br>
+Ice White Mocha 아이스화이트모카<br>
+Hot Coffee (HOT 커피)<br>
+Americano 아메리카노<br>
+Cafe Vienna 카페비엔나<br>
+Espresso 에스프레소<br>
+Cafe Latte 카페라떼<br>
+Venti Cafe Latte 벤티카페라떼<br>
+Vanilla Latte 바닐라라떼<br>
+Hazelnut Latte 헤이즐럿라떼<br>
+Caramel Latte 카라멜 라떼<br>
+Cappuccino 카푸치노<br>
+Extra<br>
+Extra Shot 아이스샷추가<br>
+Extra Whipping Cream 아이스휘핑추가<br>
+Extra Syrup 아이스시럽추가<br>
+Remove Whipping Cream 아이스휘핑제외<br>
+Extra Shot 샷추가<br>
+Extra Whipping Cream 휘핑추가<br>
+Extra Syrup 시럽추가<br>
+Remove Whipping Cream 휘핑없음<br>
+Ice Tea/Ade (아이스티)에이드 <br>
+NonCofe <br>
+Peach Ice Tea 아이스티 복숭아<br>
+Ice Green Tea Latte 아이스녹차라떼<br>
+Venti Peach Ice Tea 벤티복숭아아이스티<br>
+Green Tea Late 녹차라떼<br>
+Pomegranate Ice Tea 석류아이스티<br>
+Ice Black Tea Latte 아이스홍차라떼<br>
+Venti Pomegranate Ice Tea 벤티석류아이스티<br>
+Black Tea Latte 홍차라떼<br>
+Grapefruit Ade 자몽에이드<br>
+Ice Chocolate 아이스초코<br>
+Hot Chocolate 핫초코<br>
+Ice Earl Grey Latte 아이스얼그레이라떼<br>
+Tea<br>
+Earl Grey Latte 얼그레이라떼<br>
+Ice Peppermint Tea 아이스허브티 (페퍼민트)<br>
+Peppermint Tea 허브티 (페퍼민트)<br>
+Ice Rooibos Tea 아이스허브티 (루이보스)<br>
+Rooibos Tea 허브티 (루이보스)<br>
+Ice Green Tea 아이스녹차<br>
+Green Tea 녹차<br>
+Ice Black Tea 아이스홍차 (얼그레이)<br>
+Black Tea 홍차 (얼그레이)<br>
+Ice Chamomile Tea 아이스캐모마일<br>
+Chamomile Tea 캐모마일<br>
+Ice White Chocolate 아이스화이트초코<br>
+Hot White Chocolate 화이트핫초코<br>
+Ice Mixed Grains Latte 아이스 12곡라떼<br>
+Mixed Grains Latte 12곡라떼<br>
+Fermented Rice Drink 식혜<br>
+Steamed Mik 스팀밀크<br>
+    </div>
+</body>
+</html>
