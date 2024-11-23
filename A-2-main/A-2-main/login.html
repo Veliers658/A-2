@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>로그인</title>
+</head>
+<body>
+  <nav>
+    <div class="CYWnav">
+      <div id="hamburger-icon">☰</div>
+      <!-- 햄버거 메뉴 아이콘 -->
+      <div class="nav-links">
+        <a href="club.html">Club</a>
+        <a href="map.html">Map</a>
+      </div>
+      <!--맵 영역-->
+      <input type="text" id="search-bar" placeholder="Search..." />
+      <!-- 검색 입력창 -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        
+        <!-- 동그라미 아이콘 -->
+      </div>
+      <div class="circle"></div>
+    </div>
+  </nav>
+    <h3>로그인</h3>
+    <hr>
+    <form name="fo" method="get" action="index.html">
+        <label>
+            <input type="radio" name="login_method" value="student_id" checked> 학번으로 로그인
+        </label><br>
+        <label>
+            <input type="radio" name="login_method" value="email"> 이메일로 로그인
+        </label><br>
+        사용자 ID : <input type="text" size="15"><br>
+        비밀번호 : <input type="password" name="password" size="15"><br>
+        <label>
+            <input type="checkbox" name="save_id"> ID 저장
+        </label><br>
+        <input type="submit" value="완료">
+    </form>
+</body>
+</html>
