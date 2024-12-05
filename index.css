@@ -1,15 +1,80 @@
 body {
   margin: 0;
   text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  
 }
+
+
+:root {
+  /* 기본 모드 색상 */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --nav-bg-color: #325397;
+  --nav-text-color: #ffffff;
+  --box-bg-color: #e0e0e0;
+  --box-bg-color2: #c8c7c7;
+  --SEAside-bg-color: #e0e0e0;
+  --SEbanner-bg-color: #ffffff; /* SEbanner 기본 배경 */
+  --section-bg-color: #ffffff; /* section 기본 배경 */
+  --highlight-bg-color:#ffffff;
+}
+
+#sidebar, #search-bar, article, .circle, .SEAside, .HJsection {
+  background-color: white;
+}
+
+body.dark-mode {
+  /* 다크모드 색상 */
+  --bg-color: #262626; /* 전체 배경 */
+  --text-color: #e0e0e0; /* 기본 텍스트 */
+  --nav-bg-color: #4A5C7E; /* 네비게이션 배경 */
+  --nav-text-color: #e0e0e0; /* 네비게이션 텍스트 */
+  --box-bg-color: #171717; /* 카드/박스 배경 */
+  --highlight-bg-color: #061532; /* 강조 섹션 배경 */
+  --highlight-text-color: #4A5C7E; /* 강조 텍스트 색상 */
+  --SEbanner-bg-color: #171717; /* 다크모드 SEbanner 배경 */
+  --section-bg-color: #171717; /* 다크모드 section 배경 */
+  background-color: var(--bg-color); /* 다크모드 배경 */
+  color: var(--text-color); /* 다크모드 텍스트 */
+  --SEAside-bg-color: #061532;
+}
+
+body.dark-mode button {
+  background-color: #444;
+  color: white;
+}
+/* 검색창 다크모드 스타일 */
+#search-bar.dark-mode {
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+}
+
+/* 햄버거 아이콘 다크모드 */
+#hamburger-icon.dark-mode {
+  color: var(--icon-color);
+}
+
+/* 동그라미 다크모드 */
+.circle.dark-mode {
+  background-color: var(--icon-color);
+}
+
+/* 화이트 모드에서 nav 배경을 흰색으로 설정 */
 nav {
   display: flex;
-  background-color: hsl(0, 0%, 100%);
   height: 100px;
   line-height: 100px;
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  background-color:var(--highlight-bg-color); /* 화이트 모드에서 흰색 배경 */
+  color: var(--nav-text-color); /* 텍스트 색상 유지 */
+}
+body.dark-mode nav {
+  background: linear-gradient(90deg, #2c2c2c, #1a1a1a); /* 다크 모드 배경 */
+  color: var(--nav-text-color); /* 다크 모드 텍스트 색상 */
 }
 /* 네비게이션 바 스타일 */
 .CYWnav {
@@ -23,6 +88,8 @@ nav {
   color: #fff;
   gap: 20px;
   justify-content:space-between;
+  background-color: var(--nav-bg-color); /* 네비게이션 바 배경색 */
+  color: var(--nav-text-color); /* 네비게이션 텍스트 색상 */
 }
 
 /* 햄버거 메뉴 아이콘 */
@@ -30,6 +97,46 @@ nav {
   width: 50px;
   font-size: 50px;
   cursor: pointer;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #444;
+  color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sidebar-bg-color);
+  
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#sidebar ul li {
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+#sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+#sidebar ul li a:hover {
+  background-color: #555;
 }
 
 /* 검색 입력창 스타일 */
@@ -40,7 +147,11 @@ nav {
   border-radius: 20px;
   border: none;
   font-size: 16px;
+  background-color: var(--bg-color);
 
+}
+#search-bar.dark-mode {
+  background-color: var(--bg-color);
 }
 
 /* 링크와 동그라미를 담는 컨테이너 */
@@ -60,6 +171,7 @@ nav {
   text-decoration: none;
   color: #fff;
   font-size: 20px;
+  color: var(--nav-text-color);
 }
 
 .map a {
@@ -96,80 +208,120 @@ ul li {
   min-height: 60px;
   background-color: #abb6ce;
   border-radius: 50%;
-
-
-
+  background-color: var(--box-bg-color);
+  border: 2px solid var(--highlight-text-color);
 }
-
+.circle.dark-mode {
+  background-color: #262626; /* 동그라미 아이콘 배경색 */
+}
 aside {
   float: left;
-  background-color: #e3e6e3;
-  width: 33%;
-  height: 1000px;
+  background-color: var(--highlight-bg-color); /* 기본 배경색 */
+  width: 33%; /* 전체 너비의 1/3 */
   font-size: 50px;
   display: flex;
   flex-direction: column; /* 세로 정렬 */
   justify-content: flex-start; /* 위쪽 정렬 */
-  align-items: flex-start; /* 요소들이 컨테이너의 위쪽으로 정렬 */
-  gap: 10px; /* 요소들 사이의 간격 */
+  align-items: flex-start; /* 요소들을 왼쪽 정렬 */
+  gap: 10px; /* 요소들 사이 간격 */
+  padding: 2px; /* 내부 여백 추가 */
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+body.dark-mode aside {
+  background-color: #262626; /* 다크모드 배경 */
+  color: #e0e0e0; /* 다크모드 텍스트 */
+  border: 1px solid #404040; /* 테두리로 구분 */
+}
+button {
+  padding: 10px 20px;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .SEAside {
-  width: 98%; /* 필요에 따라 조정 */
-  background-color: #0d1218;
+  width: 100%; /* 부모 요소의 너비 채우기 */
+  background-color: var(--SEAside-bg-color);
+  color: var(--highlight-text-color);
   text-align: center;
   border-radius: 30px;
   overflow: hidden;
-  display: inline-block; /* 콘텐츠 크기에 맞게 div 크기 조정 */
-  margin-top: 10px;
+  display: flex; /* Flexbox로 정렬 */
+  justify-content: center; /* 가로 방향 가운데 정렬 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
+  height: 925px; /* 고정 높이 */
+  padding: 10px; /* 내부 여백 */
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
 }
 
 img {
-  width: 100%; /* 이미지 너비를 컨테이너에 맞춤 */
-  height: auto; /* 이미지의 비율을 유지 */
-  display: block; /* img 요소의 기본적인 하단 여백을 제거 */
+  width: 100%; /* 부모 컨테이너 너비에 맞춤 */
+  height: 100%; /* 부모 컨테이너 높이에 맞춤 */
+  object-fit: cover; /* 비율 유지하며 컨테이너에 맞춤 */
+  border-radius: 20px; /* 이미지의 모서리를 둥글게 */
+  display: block; /* 하단 여백 제거 */
 }
 
 #MSinline-block {
   display: inline-block;
   background-color: white;
 }
-
+/* section 스타일 */
 section {
-  background-color: #f9eee8;
-  width: 34%;
-  height: 1000px;
-  line-height: 200px;
-  font-size: 50px;
-  display: flex;
-  justify-content: center;
+  width: 33.%; /* 나머지 너비 사용 */
+  background-color: var(--highlight-bg-color); /* 기본 배경색 */
+  display: flex; /* 내부 정렬을 위한 Flexbox */
+  flex-direction: column;
   align-items: center;
+  padding: 10px;
+  
 }
+
+
 .HJsection {
-  width: 98%;
-  background-color: #d9d9d9;
-  height: 98%;
-  text-align: center;
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  justify-content: flex-start; /* 세로 방향 위쪽 정렬 */
+  gap: 20px; /* 각 박스 간 간격 */
+  width: 100%; /* 부모 컨테이너 너비 채우기 */
+  padding: 20px; /* 내부 여백 */
+  box-sizing: border-box; /* 패딩 포함 너비 계산 */
+  background-color: var(--box-bg-color); /* 배경색 */
+  border-radius: 15px; /* 둥근 모서리 */
+  height: fit-content; /* 내부 콘텐츠에 맞게 높이 조정 */
+}
+
+body.dark-mode .HJsection {
+  background-color: #262626; /* 어두운 배경 */
+  color: #e0e0e0; /* 밝은 텍스트 */
+}
+
+body.dark-mode .HJbox {
+  background-color: var(--box-bg-color);
 }
 .HJbox {
-  width: 90%;
-  background-color: #555555;
-  height: 8%;
+  width: 80%; /* 전체 너비 중 일부만 차지 */
+  max-width: 600px; /* 최대 너비 설정 */
   text-align: center;
-  border-radius: 30px;
-  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--box-bg-color2);
+  color: var(--text-color); /* 텍스트 색상 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .HJbox p {
   margin: 0;
-  line-height: 3vh;
-  color: white;
-  font-size: large;
+  line-height: 1.5;
+  color: inherit; /* 부모의 텍스트 색상 상속 */
+  font-size: 1rem;
 }
+a {
+  color: inherit; 
+  text-decoration: none; 
+  cursor: default; 
+}
+
 article {
-  background-color: #7fafe5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,42 +329,56 @@ article {
   height: fit-content;
   font-size: 50px;
   object-fit: cover;
+  background-color: var(--highlight-bg-color); /* article 배경색 */
 }
-
+article.dark-mode {
+  background-color: var(--article-bg-color);
+}
+/* SEbanner 스타일 */
 .SEbanner {
-  width: 98%; /* 너비가 article의 너비에 맞게 조정 */
-  background-color: #0d1218;
-  height: 90%; /* 높이 설정 */
+  background-color: var(--SEbanner-bg-color);
+  width: 98%;
+  height: auto;
+  aspect-ratio: 32 / 9; /* 16:9 비율 고정 */
   text-align: center;
   border-radius: 30px;
-  overflow: hidden; /* 이미지가 넘치지 않도록 */
-}
-
-.slideshow-container {
-  max-width: 600px;
+  overflow: hidden;
   position: relative;
-  margin: auto;
-  text-align: center;
+}
+.SEAside.dark-mode {
+  background-color: var(--SEAside-bg-color);
+}
+.slideshow-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* 이미지 크기 고정 */
 .mySlides img {
-  max-width: 100%; /* 이미지의 최대 너비 설정 */
-  max-height: 100%; /* 이미지의 최대 높이 설정 */
-  object-fit: contain; /* 이미지 비율 유지하며 컨테이너에 맞춤 */
+  width: 100%; /* 배너 너비에 맞춤 */
+  height: 100%; /* 배너 높이에 맞춤 */
+  object-fit: cover; /* 비율 유지하며 16:9 영역에 채우기 */
+  display: block; /* 중앙 정렬을 위해 block 설정 */
 }
 
 .mySlides {
-  display: flex; /* Flexbox 레이아웃 사용 */
-  justify-content: center; /* 수평 가운데 정렬 */
-  align-items: center; /* 수직 가운데 정렬 */
-  width: 100%; /* 부모 요소의 너비에 맞춤 */
-  height: 100%; /* 부모 요소의 높이에 맞춤 */
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  position: absolute; /* 겹쳐서 표시 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* 기본적으로 투명 */
+  display: none; /* 화면에서 숨김 */
+  transition: opacity 2s ease; /* 크로스페이드 애니메이션의 시간 변경 (2초로 설정) */
 }
 .mySlides.active {
   display: block;
-  animation: fadeEffect 1.5s;
+  opacity: 1; /* 활성 슬라이드 보이기 */
+  z-index: 1; /* 활성 슬라이드는 최상위에 표시 */
 }
 @keyframes fadeEffect {
   from {
@@ -255,7 +421,7 @@ article {
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 60px; /* 도트 위로 이동 */
   width: 100%;
   text-align: center;
 }
@@ -270,13 +436,19 @@ article {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
+  margin: 0 5px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
-  position: relative;
-  z-index: 10;
+}
+#dots-container {
+  position: absolute; /* 부모 요소를 기준으로 절대 위치 */
+  bottom: 20px; /* 사진 내부 하단에 배치 */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 1000;
 }
 .active,
 .dot:hover {
