@@ -4,90 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="stylesheet" type="text/css" href="login.css" />
+    <script src="index.js" defer></script>
     <title>로그인</title>
-    <script>
-      const users = [
-        { id: "user1", password: "pass1" },
-        { id: "user2", password: "pass2" },
-        { id: "user3", password: "pass3" },
-      ];
-
-      function login() {
-
-        if (event) event.preventDefault();
-        const userId = document.getElementById("userId").value;
-        const userPassword = document.getElementById("userPassword").value;
-        const loginTime = document.getElementById("login_time").value;
-
-        if (!userId || !userPassword) {
-          alert("아이디와 비밀번호를 모두 입력해주세요.");
-          return;
-        }
-
-        const user = users.find(
-          (u) => u.id === userId && u.password === userPassword
-        );
-
-        if (!user) {
-          alert("아이디 또는 비밀번호가 올바르지 않습니다.");
-          return;
-        }
-
-        let selectedTime;
-
-        if (loginTime) {
-          selectedTime = loginTime;
-        } else {
-          const now = new Date();
-          selectedTime =
-            now.getHours().toString().padStart(2, "0") +
-            ":" +
-            now.getMinutes().toString().padStart(2, "0");
-        }
-
-        window.localStorage.setItem("login_id", userId);
-        window.localStorage.setItem("login_time", selectedTime);
-
-        window.open("index.html", "_self");
-      }
-    </script>
   </head>
   <body>
+
     <nav>
       <div class="CYWnav">
         <div id="hamburger-icon">☰</div>
-        <!-- 햄버거 메뉴 아이콘 -->
-        <div class="nav-links">
-          <a href="club.html">Club</a>
-          <a href="map.html">Map</a>
-        </div>
-        <!--맵 영역-->
-        <input type="text" id="search-bar" placeholder="Search..." />
-        <!-- 검색 입력창 -->
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="login.html">Login</a>
-
-          <!-- 동그라미 아이콘 -->
-        </div>
-        <div class="circle"></div>
+        <div id="sidebar">
+          <ul>
+            <li>태마 선택<button id="dark-mode-toggle">🌙</button></li>
+            
+          </ul>
       </div>
-    </nav>
+    <!-- 햄버거 메뉴 아이콘 -->
+    <div class="nav-links">
+      <a href="club.html">Club</a>
+      <a href="map.html">Map</a>
+    </div>
+    <!--맵 영역-->
+    <input type="text" id="search-bar" placeholder="Search..." />
+    <!-- 검색 입력창 -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+
+      <!-- 로그인정보띄우기                                                      로그인정보띄우기-->
+      <div id="wel_msg"></div>
+
+      
+        <!-- 동그라미 아이콘 -->
+      </div>
+      <div class="circle"></div>
+    </div>
+  </nav>
+
     <h3>로그인</h3>
     <hr />
-    <form name="fo" method="get" action="index.html" onsubmit="login(event)" >
+    <form name="fo" method="get" onsubmit="login(event)">
       <label>
-        <input type="radio" name="login_method" value="student_id" checked/>
-        학번으로 로그인 </label
-      ><br />
+        <input type="radio" name="login_method" value="student_id" checked />
+        학번으로 로그인
+      </label>
+      <br />
       <label>
-        <input type="radio" name="login_method" value="email" /> 이메일로 로그인 </label
-      ><br />
+        <input type="radio" name="login_method" value="email" />
+        이메일로 로그인
+      </label>
+      <br />
       사용자 ID : <input type="text" id="userId" size="15" /><br />
       비밀번호 : <input type="password" id="userPassword" name="password" size="15" /><br />
       <label> <input type="checkbox" name="save_id" /> ID 저장 </label><br />
-      <input type="submit" value="완료" onclick="login()" />
-    </form> 
+      <input type="submit" value="완료" >
+    </form>
+
   </body>
 </html>

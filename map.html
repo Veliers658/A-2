@@ -2,16 +2,24 @@
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="map.css" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
 
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="index.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>한동지도</title>
+
   </head>
   <body>
-    <nav>
-      <div class="CYWnav">
-        <div id="hamburger-icon">☰</div>
+
+       <nav>
+          <div class="CYWnav">
+            <div id="hamburger-icon">☰</div>
+            <div id="sidebar">
+              <ul>
+                <li>태마 선택<button id="dark-mode-toggle">🌙</button></li>
+                
+              </ul>
+          </div>
         <!-- 햄버거 메뉴 아이콘 -->
         <div class="nav-links">
           <a href="club.html">Club</a>
@@ -24,17 +32,22 @@
           <a href="index.html">Home</a>
           <a href="login.html">Login</a>
 
+          <!-- 로그인정보띄우기                                                      로그인정보띄우기-->
+          <div id="wel_msg"></div>
+
+          
           <!-- 동그라미 아이콘 -->
         </div>
         <div class="circle"></div>
       </div>
     </nav>
+
     <div id="iframesect">
       <iframe src="mapinfo.html" style="width: 100%; height: 100%; border: none;"></iframe>
     </div>
 
     <div id="map">
-      <img src="/A-2-main/images/학관전체.png" usemap="#image-map" alt="HGU map" />
+      <img src="./images/학관전체.png" usemap="#image-map" alt="HGU map" />
       <map name="image-map">
         <area
           shape="rect"
@@ -43,8 +56,9 @@
           alt="동아리"
           title="동아리방" />
       </map>
+
       <!-- 왼쪽 위 투명 영역과 드롭다운 -->
-      <div class="hover-area top-left"></div>
+      <!--<div class="hover-area top-left"></div>
       <div class="dropdown top-left">
         <strong>한동 맘스 :</strong> 한동대학교에는 학생들을 위해 영양식과 균형 잡힌 식사를
         제공하는 '맘스키친'이라는 식당이 있다.<br />
@@ -60,9 +74,10 @@
         <strong>브레이크 타임 :</strong> 09:00~10:30 / 14:30~16:30 <br />
         <strong>휴무일 :</strong> 일요일 <br />
         <strong>위치 :</strong> 학관 옆 건물 <br />
-      </div>
+      </div>-->
 
       <!-- 오른쪽 아래 투명 영역과 드롭다운 -->
+       <!--
       <div class="hover-area bottom-right"></div>
       <div class="dropdown bottom-right">
         한동 우체국: 한동대학교에는 학생들과 교직원들의 편의를 위해 운영되는
@@ -79,8 +94,8 @@
         위치 : 학관안 <br />
         비고 : 당일배송 우체국 마감 16:40 <br />
       </div>
-    </div>
+    </div>-->
+    
 
-    <script src="index.js"></script>
   </body>
 </html>

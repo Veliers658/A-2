@@ -3,36 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="index.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>동아리</title>
+
   </head>
   <body>
+
     <nav>
       <div class="CYWnav">
         <div id="hamburger-icon">☰</div>
         <div id="sidebar">
           <ul>
-            <li><a href="#menu1">Menu1</a></li>
-            <li><a href="#menu2">Menu2</a></li>
+            <li>태마 선택<button id="dark-mode-toggle">🌙</button></li>
+            
           </ul>
-        </div>
-        <!-- 햄버거 메뉴 아이콘 -->
-        <div class="nav-links">
-          <a href="club.html">Club</a>
-          <a href="map.html">Map</a>
-        </div>
-        <!--맵 영역-->
-        <input type="text" id="search-bar" placeholder="Search..." />
-        <!-- 검색 입력창 -->
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="login.html">Login</a>
-          
-          <!-- 동그라미 아이콘 -->
-        </div>
-        <div class="circle"></div>
       </div>
-    </nav>
+    <!-- 햄버거 메뉴 아이콘 -->
+    <div class="nav-links">
+      <a href="club.html">Club</a>
+      <a href="map.html">Map</a>
+    </div>
+    <!--맵 영역-->
+    <input type="text" id="search-bar" placeholder="Search..." />
+    <!-- 검색 입력창 -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+
+      <!-- 로그인정보띄우기                                                      로그인정보띄우기-->
+      <div id="wel_msg"></div>
+
+      
+        <!-- 동그라미 아이콘 -->
+      </div>
+      <div class="circle"></div>
+    </div>
+  </nav>
     
     <div class="container">
       <div class="box">
@@ -60,5 +67,6 @@
         <div class="description">본문 6</div>
       </div>
     </div>
+
   </body>
 </html>
