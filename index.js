@@ -188,52 +188,112 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-try {
-  const users = [
-    { id: "user1", password: "pass1" },
-    { id: "user2", password: "pass2" },
-    { id: "user3", password: "pass3" },
-  ];
+const urls = [
+  { title: "Homepage 개요", url: "index.html" },
+  { title: "Map 개요", url: "map.html" },
+  { title: "Login 개요", url: "login.html" },
+  { title: "Club 개요", url: "club.html" },
+  { title: "Map Info", url: "mapinfo.html" }
+];
 
-  function login(event) {
+const data = [];
+
+// HTML에서 텍스트 콘텐츠만 추출
+function extractTextFromHTML(htmlString) {
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+    return doc.body.textContent || "";
+  } catch (error) {
+    console.error("Error extracting text from HTML:", error);
+    return "";
+  }
+}
+
+// URL에서 콘텐츠 읽어오기
+async function loadContent() {
+  for (let item of urls) {
     try {
-      if (event) event.preventDefault();
-      const userId = document.getElementById("userId").value;
-      const userPassword = document.getElementById("userPassword").value;
-      const loginTime = document.getElementById("login_time").value;
-
-      if (!userId || !userPassword) {
-        alert("아이디와 비밀번호를 모두 입력해주세요.");
-        return;
+      const response = await fetch(item.url);
+      if (!response.ok) {
+        console.error(`Failed to fetch ${item.url}: ${response.status}`);
+        continue;
       }
-
-      const user = users.find((u) => u.id === userId && u.password === userPassword);
-
-      if (!user) {
-        alert("아이디 또는 비밀번호가 올바르지 않습니다.");
-        return;
-      }
-
-      let selectedTime;
-
-      if (loginTime) {
-        selectedTime = loginTime;
-      } else {
-        const now = new Date();
-        selectedTime =
-          now.getHours().toString().padStart(2, "0") +
-          ":" +
-          now.getMinutes().toString().padStart(2, "0");
-      }
-
-      window.localStorage.setItem("login_id", userId);
-      window.localStorage.setItem("login_time", selectedTime);
-
-      window.open("index.html", "_self");
+      const text = await response.text();
+      const plainText = extractTextFromHTML(text);
+      data.push({ url: item.url, content: plainText });
     } catch (error) {
-      console.error("로그인 처리 중 오류 발생:", error.message);
+      console.error(`Error loading content from ${item.url}:`, error);
     }
   }
-} catch (error) {
-  console.error("로그인 초기화 중 오류 발생:", error.message);
 }
+
+// 검색 이벤트
+function performSearch() {
+  const searchInput = document.getElementById("search-bar").value.toLowerCase();
+  const resultsContainer = document.getElementById("search-results");
+  resultsContainer.innerHTML = "";
+
+  if (searchInput.trim() === "") {
+    resultsContainer.classList.remove("show");
+    return;
+  }
+
+  const results = data.filter(
+    (item) =>
+      item.content.toLowerCase().includes(searchInput)
+  );
+
+  if (results.length > 0) {
+    results.forEach((result) => {
+      const matchedIndex = result.content.toLowerCase().indexOf(searchInput);
+      const previewStart = Math.max(matchedIndex - 30, 0);
+      const previewEnd = Math.min(
+        matchedIndex + 30 + searchInput.length,
+        result.content.length
+      );
+      const preview = result.content.slice(previewStart, previewEnd);
+
+      const resultItem = document.createElement("div");
+      resultItem.classList.add("result-item");
+      resultItem.innerHTML = `
+        <p>
+          ...${preview.replace(
+            new RegExp(searchInput, "gi"),
+            (match) => `<b>${match}</b>`
+          )}...
+        </p>
+      `;
+      resultItem.addEventListener("click", () => {
+        if (result.url === "mapinfo.html") {
+          // mapinfo.html의 검색 결과는 map.html로 이동
+          window.location.href = "map.html";
+        } else {
+          // 다른 검색 결과는 해당 URL로 이동
+          window.location.href = result.url;
+        }
+      });
+      resultsContainer.appendChild(resultItem);
+    });
+    resultsContainer.classList.add("show");
+  } else {
+    resultsContainer.innerHTML = "<div class='result-item'>검색 결과가 없습니다.</div>";
+    resultsContainer.classList.add("show");
+  }
+}
+
+// 초기 데이터 로드
+loadContent();
+
+// 검색 입력창 이벤트
+document.getElementById("search-bar").addEventListener("input", performSearch);
+
+// 검색 영역 외부 클릭 시 닫기
+document.addEventListener("click", function (event) {
+  const resultsContainer = document.getElementById("search-results");
+  const searchBar = document.getElementById("search-bar");
+  if (!resultsContainer.contains(event.target) && event.target !== searchBar) {
+    resultsContainer.classList.remove("show");
+  }
+});
+
