@@ -316,3 +316,22 @@ document.addEventListener("click", function (event) {
   }
 });
 
+//iframe 이동
+document.addEventListener("click", function (event) {
+  const resultsContainer = document.getElementById("search-results");
+  const searchBar = document.getElementById("search-bar");
+  if (!resultsContainer.contains(event.target) && event.target !== searchBar) {
+    resultsContainer.classList.remove("show");
+  }
+});
+document.querySelectorAll('table a').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault(); // 기본 동작 방지
+    const targetId = link.getAttribute('href').substring(1); // 앵커 ID 추출
+    const iframe = document.querySelector('#iframesect iframe');
+
+    // iframe 내부에 접근하여 해당 ID로 스크롤 이동
+    iframe.contentWindow.document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
