@@ -2,92 +2,69 @@
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
-
+    <link rel="stylesheet" type="text/css" href="map.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <script src="index.js" defer></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>한동지도</title>
-
   </head>
   <body>
-
     <nav>
       <div class="CYWnav">
         <div id="hamburger-icon">☰</div>
-        <div id="sidebar">
-          <ul>
-            <!-- 작은 화면에서는 JavaScript로 여기에 항목을 추가 -->
-            <li><p>테마 선택</p><button id="dark-mode-toggle">🌙</button></li>
-          </ul>
+        <!-- 햄버거 메뉴 아이콘 -->
+        <div class="nav-links">
+          <a href="club.html">Club</a>
+          <a href="map.html">Map</a>
         </div>
-        <div style="position: relative;">
-          <input type="text" id="search-bar" placeholder="Search..." />
-          <div id="search-results"></div>
+        <!--맵 영역-->
+        <input type="text" id="search-bar" placeholder="Search..." />
+        <!-- 검색 입력창 -->
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="login.html">Login</a>
+
+          <!-- 동그라미 아이콘 -->
         </div>
-        <ul class="nav-links">
-          <li><a href="club.html">Club</a></li>
-          <li><a href="map.html">Map</a></li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
         <div class="circle"></div>
       </div>
     </nav>
-
     <div id="iframesect">
-      <iframe src="mapinfo.html" style="width: 100%; height: 100%; border: none;"></iframe>
-    </div>
-
+        <iframe src="mapinfo.html" style="width: 100%; height: 100%; border: none;"></iframe>
+      </div>
     <div id="map">
-      <img src="./images/학관전체.png" usemap="#image-map" alt="HGU map" />
+      <img src="images/한동map_최종.jpg" usemap="#image-map" alt="HGU map" />
       <map name="image-map">
         <area
           shape="rect"
           coords="298,346,699,269"
-          href="https://lms.handong.edu/courses/17249/assignments/228740"
+          href="https://www.handong.edu/kor/camplife/stu-organ/club/perform/"
           alt="동아리"
           title="동아리방" />
+          <area
+          shape="rect"
+          coords="820,400, 860,460"
+          href="https://www.handong.edu/kor/camplife/stu-organ/club/perform/"
+          alt="미르"
+          title="미르" />
       </map>
-
-      <!-- 왼쪽 위 투명 영역과 드롭다운 -->
-      <!--<div class="hover-area top-left"></div>
-      <div class="dropdown top-left">
-        <strong>한동 맘스 :</strong> 한동대학교에는 학생들을 위해 영양식과 균형 잡힌 식사를
-        제공하는 '맘스키친'이라는 식당이 있다.<br />
-        이곳은 매일 다양한 메뉴를 선보이지만, 고정 메뉴로는 돈까스를 제공한다.
-        최근 학교에서는 이 식당의 내부와 구조를 전면적으로 개편하여 더욱
-        쾌적하고 위생적인 환경으로 탈바꿈시켰다.<br />
-        특히, '맘스키친'의 큰 장점은 샐러드바를 무제한으로 이용할 수 있다는
-        점이다.<br />
-        <br />
-        <strong>운영일 :</strong> 월~토 (공휴일 포함) <br />
-        <strong>운영시간 :</strong>아침 : 07:30~09:00 / 점심 : 10:30~14:30 / 저녁 : 16:30~19:30
-        <br />
-        <strong>브레이크 타임 :</strong> 09:00~10:30 / 14:30~16:30 <br />
-        <strong>휴무일 :</strong> 일요일 <br />
-        <strong>위치 :</strong> 학관 옆 건물 <br />
-      </div>-->
-
-      <!-- 오른쪽 아래 투명 영역과 드롭다운 -->
-       <!--
-      <div class="hover-area bottom-right"></div>
-      <div class="dropdown bottom-right">
-        한동 우체국: 한동대학교에는 학생들과 교직원들의 편의를 위해 운영되는
-        우체국이 있다.<br />
-        이곳에서는 우편물 발송과 수령, 택배 서비스, 우표 및 각종 문구류 판매 등
-        다양한 우편 관련 서비스를 제공한다.<br />
-        또한, 학교 내부에 위치해 있어 접근성이 좋고, 학생들이 학업 중에도 손쉽게
-        우편 업무를 처리할 수 있는 것이 큰 장점이다.<br />
-        <br />
-        운영일 : 월~금 <br />
-        운영시간 : 09:00~18:00 <br />
-        브레이크 타임 : 12:00~13:00 <br />
-        휴무일 : 주말 / 공휴일 <br />
-        위치 : 학관안 <br />
-        비고 : 당일배송 우체국 마감 16:40 <br />
-      </div>
-    </div>-->
-    
-
+  </div>
+  <table border=2 width=450 height=100  cellspacing=20 align=center>
+    <tr>
+        <td><a href="#item1">한동 맘스</a></td>
+        <td><a href="#item2">한동 우체국</a></td>
+    </tr>
+    <tr>
+        <td><a href="#item3">애인트</a></td>
+        <td><a href="#item4">든든한동</a></td>
+    </tr>
+    <tr>
+        <td><a href="#item7">네오</a></td>
+        <td><a href="#item5">미르</a></td>
+        <td><a href="#item6">그랜드슬램</a></td>
+    </tr>
+</table>
+    <script src="index.js"></script>
   </body>
 </html>
+
