@@ -8,9 +8,9 @@ try {
 
 try {
   const images = [
-    { src: "./images/한동캠퍼스사진.webp", caption: "Caption Text" },
-    { src: "./images/한동교회외부사진.jpg", caption: "Caption Two" },
-    { src: "./images/한동교회사진.jpg", caption: "Caption Three" },
+    { src: "./images/한동캠퍼스사진.webp", caption: "한동캠퍼스" },
+    { src: "./images/한동교회외부사진.jpg", caption: "한동교회외부사진" },
+    { src: "./images/한동교회사진.jpg", caption: "한동교회사진" },
   ];
 
   let slideIndex = 0;
@@ -82,33 +82,52 @@ document.addEventListener("DOMContentLoaded", function () {
   try {
     const hamburgerIcon = document.getElementById("hamburger-icon");
     const sidebar = document.getElementById("sidebar");
+    const navLinks = document.querySelectorAll(".nav-links li"); // li 요소 선택
 
-    hamburgerIcon.addEventListener("click", function () {
-      try {
-        const sidebarStyle = getComputedStyle(sidebar);
-        if (sidebarStyle.left === "0px") {
-          sidebar.style.left = "-250px";
-        } else {
-          sidebar.style.left = "0px";
-        }
-      } catch (error) {
-        console.error("햄버거 메뉴 클릭 처리 중 오류 발생:", error.message);
-      }
-    });
+    // 작은 화면에서 사이드바에 네비게이션 링크 복사
+    try {
+      const sidebarList = sidebar.querySelector("ul");
+      navLinks.forEach(linkItem => {
+        const clonedItem = linkItem.cloneNode(true); // li 요소 복제
+        sidebarList.appendChild(clonedItem);
+      });
+    } catch (error) {
+      console.error("사이드바에 네비게이션 링크 복사 중 오류 발생:", error.message);
+    }
 
-    document.addEventListener("click", function (event) {
-      try {
-        if (!sidebar.contains(event.target) && !hamburgerIcon.contains(event.target)) {
-          sidebar.style.left = "-250px";
+    // 햄버거 메뉴 클릭 이벤트
+    try {
+      hamburgerIcon.addEventListener("click", function () {
+        try {
+          sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+        } catch (error) {
+          console.error("햄버거 메뉴 클릭 처리 중 오류 발생:", error.message);
         }
-      } catch (error) {
-        console.error("메뉴 외부 클릭 처리 중 오류 발생:", error.message);
-      }
-    });
+      });
+    } catch (error) {
+      console.error("햄버거 메뉴 클릭 이벤트 추가 중 오류 발생:", error.message);
+    }
+
+    // 클릭 시 메뉴 닫기
+    try {
+      document.addEventListener("click", function (event) {
+        try {
+          if (!sidebar.contains(event.target) && !hamburgerIcon.contains(event.target)) {
+            sidebar.style.left = "-250px";
+          }
+        } catch (error) {
+          console.error("메뉴 외부 클릭 처리 중 오류 발생:", error.message);
+        }
+      });
+    } catch (error) {
+      console.error("메뉴 외부 클릭 이벤트 추가 중 오류 발생:", error.message);
+    }
   } catch (error) {
     console.error("DOMContentLoaded 초기화 중 오류 발생:", error.message);
   }
 });
+
+
 
 try {
   function setWelcomeMessage() {

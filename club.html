@@ -9,58 +9,87 @@
 
   </head>
   <body>
-
     <nav>
       <div class="CYWnav">
-          <div id="hamburger-icon">☰</div>
-          <div id="sidebar">
-              <ul>
-                  <li>테마 선택<button id="dark-mode-toggle">🌙</button></li>
-              </ul>
-          </div>
-          <div class="nav-links">
-              <a href="club.html">Club</a>
-              <a href="map.html">Map</a>
-          </div>
-          <div style="position: relative;">
-              <input type="text" id="search-bar" placeholder="Search..." />
-              <div id="search-results"></div>
-          </div>
-          <div class="nav-links">
-              <a href="index.html">Home</a>
-              <a href="login.html">Login</a>
-              <div id="wel_msg"></div>
-          </div>
-          <div class="circle"></div>
+        <div id="hamburger-icon">☰</div>
+        <div id="sidebar">
+          <ul>
+            <!-- 작은 화면에서는 JavaScript로 여기에 항목을 추가 -->
+            <li><p>테마 선택</p><button id="dark-mode-toggle">🌙</button></li>
+          </ul>
+        </div>
+        <div style="position: relative;">
+          <input type="text" id="search-bar" placeholder="Search..." />
+          <div id="search-results"></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="club.html">Club</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+        <div class="circle"></div>
       </div>
-  </nav>
+    </nav>
     
-    <div class="container">
-      <div class="box">
-        <img src="링크" alt="이미지1" />
-        <div class="description">본문1</div>
-      </div>
-      <div class="box">
-        <img src="링크2" alt="이미지 2" />
-        <div class="description">본문2</div>
-      </div>
-      <div class="box">
-        <img src="링크3" alt="이미지 3" />
-        <div class="description">본문 3</div>
-      </div>
-      <div class="box">
-        <img src="링크4" alt="Image 4" />
-        <div class="description">본문 4</div>
-      </div>
-      <div class="box">
-        <img src="링크5" alt="Image 5" />
-        <div class="description">본문 5</div>
-      </div>
-      <div class="box">
-        <img src="링크6" alt="Image 6" />
-        <div class="description">본문 6</div>
-      </div>
-    </div>
-
-  </body>
+    <h1>동아리 소개</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>동아리 이름</th>
+                <th>설명</th>
+                <th>동방 위치</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>덜지니어스</td><td>보드게임 동아리 - 매주 금요일 저녁 8시에 정기 모임 - 학기 중 보드게임 카페 운영</td><td>학관 2층 231</td></tr>
+            <tr><td>오르</td><td>이스라엘 중보기도 동아리 - 매주 목요일 저녁 6시반 정기 모임 - 이스라엘의 평안과 복음화를 위해 기도 - 히브리어, 히브리어 찬양 익히기, 이스라엘 스터디, 기도회·선교축제 준비</td><td>X</td></tr>
+            <tr><td>MiR(미르)</td><td>밴드 동아리</td><td>X</td></tr>
+            <tr><td>한마지로</td><td>유도 동아리 - 매주 화요일 오후 7시, 토요일 오전 11시 정기 모임</td><td>학관 2층 209</td></tr>
+            <tr><td>꾼들</td><td>연극 동아리</td><td>학관 2층 240</td></tr>
+            <tr><td>갓스펠로우</td><td>힙합 동아리(MNT 소속) - 랩으로 하나님께 찬양과 영광 올려드림</td><td>학관 2층 210</td></tr>
+            <tr><td>슬기짜기</td><td>전산분과 동아리 - 매주 화요일 6시 정기 모임 - 전공·프로젝트 스터디, C언어 스터디</td><td>학관 2층 209</td></tr>
+            <tr><td>응원단</td><td>한동대학교 응원단 동아리</td><td>학관 2층 232</td></tr>
+            <tr><td>레버리</td><td>클래식 기타 동아리 - 매주 월·화·목 9시 정기모임</td><td>학관 2층 213</td></tr>
+            <tr><td>어메이징 스토리</td><td>기독교 연극 동아리(MNT 소속)</td><td>학관 2층 207</td></tr>
+            <tr><td>SFC</td><td>복음화 운동 학생신앙공동체 - 하나님중심·성경중심·교회중심 - 매주 화요일 저녁 7시 정기 모임</td><td>학관 2층 208</td></tr>
+            <tr><td>암스트롱</td><td>조정 동아리</td><td>X</td></tr>
+            <tr><td>하향</td><td>한국 무용 동아리(MNT 소속)</td><td>X</td></tr>
+            <tr><td>천풍해세</td><td>태권도 동아리</td><td>학관 2층 239</td></tr>
+            <tr><td>삼손</td><td>헬스 동아리</td><td>학관 2층 211</td></tr>
+            <tr><td>G·O(Great Order)</td><td>워십 동아리(워십·예배·선교) - 매주 월·목 저녁 8시 정기 모임</td><td>학관 2층 214</td></tr>
+            <tr><td>한풍</td><td>사물놀이 동아리(MNT 소속)</td><td>학관 2층 212</td></tr>
+            <tr><td>리퀴드(Liquid)</td><td>크리스천 밴드 동아리(MNT 소속)</td><td>학관 3층</td></tr>
+            <tr><td>청소년 자유학교</td><td>교육봉사 동아리 - 학교 밖 청소년들을 위한 대안학교 - 검정고시 수업 - 교무 회의</td><td>학관 2층 230</td></tr>
+            <tr><td>오케스트라</td><td>한동대학교 오케스트라 동아리 - 매주 월·목 저녁 8시 정기 모임</td><td>학관 2층 226</td></tr>
+            <tr><td>즉새두</td><td>재즈 밴드 동아리 - 매주 화요일 저녁 8시반 정기 모임</td><td>X</td></tr>
+            <tr><td>CCC</td><td>기독교 선교 동아리</td><td>학관 2층 234</td></tr>
+            <tr><td>피치파이프</td><td>아카펠라 동아리</td><td>학관 2층 233</td></tr>
+            <tr><td>차요차요</td><td>여자 풋살 동아리 - 매주 월·목 저녁 8시 정기 모임</td><td>학관 2층 214</td></tr>
+            <tr><td>MIC(Motion In Christ)</td><td>힙합 기반 춤 동아리(MNT 소속)</td><td>X</td></tr>
+            <tr><td>한검</td><td>검도 동아리</td><td>학관 2층 236</td></tr>
+            <tr><td>팔레트</td><td>벽화 봉사 동아리</td><td>학관 2층 234</td></tr>
+            <tr><td>NEO</td><td>작사작곡 밴드 동아리 - 매주 월요일 저녁 7시 정기 모임</td><td>학관 2층 228</td></tr>
+            <tr><td>챔버&성가대</td><td>한동대학교 교회 주일예배에서 찬양(MNT 소속)</td><td>X</td></tr>
+            <tr><td>IVF</td><td>기독교 동아리 - 매주 목요일 저녁 8시 정기 모임 - 성경 공부(GIBS), 소그룹 모임</td><td>X</td></tr>
+            <tr><td>홀리램스</td><td>미식 축구 동아리</td><td>학관 2층 233</td></tr>
+            <tr><td>소울</td><td>수어 동아리</td><td>학관 2층 232</td></tr>
+            <tr><td>ZIZZY</td><td>댄스 동아리</td><td>학관 2층 237</td></tr>
+            <tr><td>CANVAS</td><td>미술 동아리(전시)</td><td>학관 2층 238</td></tr>
+            <tr><td>HAC</td><td>만화(애니메이션) 동아리</td><td>학관 2층 211</td></tr>
+            <tr><td>VAM</td><td>사진 동아리</td><td>학관 2층 230</td></tr>
+            <tr><td>비전선교단</td><td>해외선교단체</td><td>학관 2층 210</td></tr>
+            <tr><td>B2B</td><td>성경 암송 동아리</td><td>학관 2층 235</td></tr>
+            <tr><td>그랜드슬램</td><td>테니스 동아리</td><td>학관 2층 237</td></tr>
+            <tr><td>스윕</td><td>주짓수 동아리</td><td>학관 2층 207</td></tr>
+            <tr><td>한방 스윙스</td><td>야구 동아리</td><td>학관 2층 239</td></tr>
+            <tr><td>H.MILAN</td><td>축구 동아리 - 매주 화·금 6-7교시 정기 모임</td><td>학관 2층 229</td></tr>
+            <tr><td>Hoops</td><td>농구 동아리</td><td>X</td></tr>
+            <tr><td>펜통</td><td>문예창작 동아리 - 매주 글을 쓰고 서로 피드백 함, 전시회</td><td>학관 2층 235</td></tr>
+            <tr><td>DUDUS</td><td>창조과학 동아리</td><td>학관 2층 231</td></tr>
+            <tr><td>피스메이커</td><td>아동 봉사 동아리</td><td>학관 2층 238</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
 </html>
