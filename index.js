@@ -1,12 +1,4 @@
 try {
-  console.log("JavaScript is running");
-  console.log("Dark mode status:", document.body.classList.contains("dark-mode"));
-  console.log(localStorage.getItem("dark-mode"));
-} catch (error) {
-  console.error("콘솔 초기화 중 오류 발생:", error.message);
-}
-
-try {
   const images = [
     { src: "./images/한동캠퍼스사진.webp", caption: "한동캠퍼스" },
     { src: "./images/한동교회외부사진.jpg", caption: "한동교회외부사진" },
@@ -22,7 +14,7 @@ try {
       for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active");
       }
-      slideIndex = (slideIndex + 1) % slides.length;
+      slideIndex = (slideIndex + 1) % slides.length; // 다음 슬라이드로 순환
       slides[slideIndex].classList.add("active");
     } catch (error) {
       console.error("슬라이드 표시 중 오류 발생:", error.message);
@@ -31,9 +23,30 @@ try {
 
   function startAutoSlide() {
     try {
-      autoSlideInterval = setInterval(showSlides, 3000);
+      autoSlideInterval = setInterval(showSlides, 3000); // 3초마다 슬라이드 변경
     } catch (error) {
       console.error("자동 슬라이드 시작 중 오류 발생:", error.message);
+    }
+  }
+
+  function plusSlides(n) {
+    try {
+      slideIndex += n; // 슬라이드 인덱스 업데이트
+      const slides = document.getElementsByClassName("mySlides");
+      if (slideIndex >= slides.length) {
+        slideIndex = 0; // 마지막 슬라이드 이후 처음으로 돌아감
+      } else if (slideIndex < 0) {
+        slideIndex = slides.length - 1; // 첫 슬라이드 이전 마지막으로 이동
+      }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+
+      slides[slideIndex].classList.add("active");
+      // 자동 슬라이드 유지 (setInterval 계속 실행 중)
+    } catch (error) {
+      console.error("이전/다음 슬라이드 변경 중 오류 발생:", error.message);
     }
   }
 
@@ -57,17 +70,15 @@ try {
         const dot = document.createElement("span");
         dot.className = "dot";
         dot.onclick = () => {
-          clearInterval(autoSlideInterval);
           slideIndex = index - 1;
           showSlides();
-          startAutoSlide();
         };
         dotsContainer.appendChild(dot);
       });
 
       const slides = document.getElementsByClassName("mySlides");
-      slides[0].classList.add("active");
-      startAutoSlide();
+      slides[0].classList.add("active"); // 첫 슬라이드 활성화
+      startAutoSlide(); // 자동 슬라이드 시작
     } catch (error) {
       console.error("슬라이드 초기화 중 오류 발생:", error.message);
     }
@@ -77,6 +88,7 @@ try {
 } catch (error) {
   console.error("슬라이드 전체 초기화 중 오류 발생:", error.message);
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   try {
