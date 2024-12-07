@@ -38,15 +38,22 @@ body.dark-mode {
   --highlight-text-color: #4A5C7E; /* 강조 텍스트 색상 */
   --SEbanner-bg-color: #171717; /* 다크모드 SEbanner 배경 */
   --section-bg-color: #171717; /* 다크모드 section 배경 */
+  --SEAside-bg-color: #061532;
+  
   background-color: var(--bg-color); /* 다크모드 배경 */
   color: var(--text-color); /* 다크모드 텍스트 */
-  --SEAside-bg-color: #061532;
 }
 
 body.dark-mode button {
   background-color: #444;
   color: white;
 }
+
+#htmlcontainer.dark-mode {
+  color: white; /* 글자 색상만 흰색으로 설정 */
+  background-color: var(--box-bg-color); /* 박스 배경색을 다크모드 색상으로 설정 */
+}
+
 /* 검색창 다크모드 스타일 */
 #search-bar.dark-mode {
   background-color: var(--input-bg-color);
@@ -148,7 +155,7 @@ body.dark-mode #sidebar {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 90%;
 }
 
 #sidebar ul li {
@@ -273,19 +280,30 @@ nav {
   text-align: center; /* 가운데 정렬 */
 }
 
-.nav-links a,
-#sidebar ul li a {
+.nav-links a {
   text-decoration: none;
   color: var(--nav-text-color);
   padding: 5px 10px;
   display: block;
 }
 
-.nav-links a:hover,
+#sidebar ul li a {
+  text-decoration: none;
+  color: var(--nav-text-color);
+  padding: 10px 15px;
+}
+
+.nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  line-height: 70px;
+}
+
 #sidebar ul li a:hover {
-  background-color: var(--highlight-bg-color);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
 }
+
 
 .map a {
   text-decoration: none;
