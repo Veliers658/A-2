@@ -791,7 +791,7 @@ body {
 #iframesect{
   float:left;
   width:40%;
-  height:1500px;
+  height:100%;
   line-height:200px;
 }
 
