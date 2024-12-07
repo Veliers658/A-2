@@ -780,8 +780,7 @@ body {
 #map{
   float:left;
   width:60%;
-  height:200px;
-  line-height:200px;
+  height:100%;
 }
 
 
@@ -895,7 +894,7 @@ tr:nth-child(even) {
   background-color: var(--box-bg-color2); /* 짝수 행 배경색 */
 }
 
-tr:hover {
+td:hover {
   background-color: var(--highlight-text-color); /* 호버 시 배경색 */
   color: white; /* 호버 시 텍스트 색상 */
 }

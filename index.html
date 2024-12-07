@@ -1,155 +1,142 @@
 <!DOCTYPE html>
 <html lang="kr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <script src="index.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>한동마당</title>
-  </head>
-  <body>
-    <!--한동마당 규칙
-    1. 비속어 금지(나중에 체점 하실때 ㅎㄷㄷ)
-    2. 본인 코드 5줄마다 주석 달기
-    3. 컨z 허용(논란)
-    4. 다른 사람 바로 밑에서 코딩 금지(이름표 방해됨)
-    5. 적용 안되면 나갔다 들어오기(new!)
-    6. 김성은 파일 변경 시 공지 필수(안 그럼 혼남)
-    7. 탄식 금지 (-> '오~')
-    분담 내용:
-    학관 1층: 문하진, 장예원- 따스,H:plate,든든, 누들, 에인트, 맘스, 학관 101A, 101B, 화장실, 우체국
-    학관 2층: 김민수, 김성은- 동아리방, 학생기구, CCR 등 유틸리티룸, 옥상, 화장실 중구난방, 이미지스테이션, 기빙트리, 밴드연습실, 학생기구들, 
-    기타: 그냥 조사 해놓은 정보(나중에 시간되면하기)
-    자료조사하기 학관 도면
 
-    배경은 하얀색 
-    
-        -->
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <script src="index.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한동마당</title>
+</head>
 
-        <nav>
-          <div class="CYWnav">
-            <div id="hamburger-icon">☰</div>
-            <div id="sidebar">
-              <ul>
-                <!-- 작은 화면에서는 JavaScript로 여기에 항목을 추가 -->
-                <li><p>테마 선택</p><button id="dark-mode-toggle">🌙</button></li>
-              </ul>
-            </div>
-            <div style="position: relative;">
-              <input type="text" id="search-bar" placeholder="Search..." />
-              <div id="search-results"></div>
-            </div>
-            <ul class="nav-links">
-              <li><a href="club.html">Club</a></li>
-              <li><a href="map.html">Map</a></li>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="login.html">Login</a></li>
-            </ul>
-            <div class="circle"></div>
-          </div>
-        </nav>
-
-    <article>
-      <div class="SEbanner">
-        <div class="slideshow-container">
-          <div id="slideshow">
-            <!-- JavaScript로 슬라이드 추가 -->
-          </div>
-    
-          <!-- 이전 및 다음 버튼 -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-    
-        <!-- 슬라이드 인디케이터 -->
-        <div id="dots-container">
-          <!-- JavaScript로 인디케이터 추가 -->
-        </div>
+<body>
+  <nav>
+    <div class="CYWnav">
+      <div id="hamburger-icon">☰</div>
+      <div id="sidebar">
+        <ul>
+          <!-- 작은 화면에서는 JavaScript로 여기에 항목을 추가 -->
+          <li>
+            <p>테마 선택</p><button id="dark-mode-toggle">🌙</button>
+          </li>
+        </ul>
       </div>
-    </article>
-    
+      <div style="position: relative;">
+        <input type="text" id="search-bar" placeholder="Search..." />
+        <div id="search-results"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="club.html">Club</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <div onload="write_Welcome()">
+        <span id="Username"></span>
+      </div>
+      <div class="circle"></div>
+    </div>
+  </nav>
 
-
-      <aside>
-        <div class="SEAside">
-          <img src="./images/미네르바.jpg" alt="미네르바 이미지" />
+  <article>
+    <div class="SEbanner">
+      <div class="slideshow-container">
+        <div id="slideshow">
+          <!-- JavaScript로 슬라이드 추가 -->
         </div>
-    </aside>
-  
-    <aside>
-        <div class="SEAside">
-          <img src="./images/광야.jpg" alt="광야 이미지" />
-        </div>
-  
-      </aside>
-      
-      <section>
-        <div class="HJsection">
-          <div class="HJbox">
-            <p>
-              <a href= https://forms.gle/GP1qN3katXRxz6XF6><strong>[새섬위원회] 2025년도 새내기 섬김이 3차 추가 모집 공지<br>
-                Freshmen Helper Recruitment Application</strong></a>
-            </p>
-          </div>
-          <div class="HJbox">
-            <p>
-              <a href= https://www.youtube.com/watch?v=HbKG7B1cHfQ>
-              [금식성회] '제2회 한동회개금식성회' 안내 </br>(Notice for 2nd
-              Handong Repentance and Fasting Prayer)</a>
-            </p>
-          </div>
-          <div class="HJbox">
-            <p>
-              <a href= https://www.youtube.com/channel/UCIYV4WqC2iJQYFXJG0gAstw>
-              <a href>[신앙프로그램] 제46기 한동사랑의동산 ~~ 와 보라 <br />2025. 2.
-                3(월) 오후 6시 - 2. 6(목) 오후 6시</strong></a>
-            </p>
-          </div>
-          <div class="HJbox">
-            <p>
-              <a href= https://forms.gle/GP1qN3katXRxz6XF6>
-              <strong
-                >[한스트] 2025 HanST Staff 모집 <br />(2025. 2. 24 (월) ~ 2025.
-                2.28 (금) 5일간)</strong></a>
-            </p>
-          </div>
-          <div class="HJbox">
-            <p>
-              <a href= https://www.handong.edu/kor/camplife/inform/school/rule>
-              <strong>[교무팀] 2025-1학기 자유학기 운영 일정 안내 <br />(2025.1.15(수)
-                ~ 27(월))</strong></a>
-            </p>
-          </div>
-          <div class="HJbox">
-            <p>
-              <a href= https://www.handong.edu/kor/camplife/inform/school/tran-connect>
-              <strong
-                >[교무팀](E/B) 2025학년도 1학기 학부선택/전공변경 신청 안내
-                <br />Information on Application for Major Selection/Change for
-                2025</strong></a>
-            </p>
-          </div>
-          <div class="HJbox">
-            <p>
-              <a href= https://www.handong.edu/kor/camplife/inform/school/class-grade>
-              <strong
-                >[학생지원팀] 2024학년도 동계계절학기 사회봉사 교과목 수강신청
-                안내 <br />사회봉사 수강신청 기간 : 11. 22.(금) 17:00 ~ 11.
-                24.(일) 23:00</strong></a>
-            </p>
-          </div>
-          <div class="HJbox">
-            <p>
-              <a href=https://www.handong.edu/kor/camplife/inform/school/schedule>
-              <strong>[교무팀] 2025학년도 학사일정 안내 <br />Information on the
-                academic schedule for the 2025 academic year</strong></a>
-            </p>
-          </div>
-        </div>
-      </section>
+
+        <!-- 이전 및 다음 버튼 -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <!-- 슬라이드 인디케이터 -->
+      <div id="dots-container">
+        <!-- JavaScript로 인디케이터 추가 -->
+      </div>
+    </div>
+  </article>
+
+
+
+  <aside>
+    <div class="SEAside">
+      <img src="./images/미네르바.jpg" alt="미네르바 이미지" />
+    </div>
+  </aside>
+
+  <aside>
+    <div class="SEAside">
+      <img src="./images/광야.jpg" alt="광야 이미지" />
+    </div>
+
+  </aside>
+
+  <section>
+    <div class="HJsection">
+      <div class="HJbox">
+        <p>
+          <a href=https://forms.gle/GP1qN3katXRxz6XF6><strong>[새섬위원회] 2025년도 새내기 섬김이 3차 추가 모집 공지<br>
+              Freshmen Helper Recruitment Application</strong></a>
+        </p>
+      </div>
+      <div class="HJbox">
+        <p>
+          <a href=https://www.youtube.com/watch?v=HbKG7B1cHfQ>
+            [금식성회] '제2회 한동회개금식성회' 안내 </br>(Notice for 2nd
+            Handong Repentance and Fasting Prayer)</a>
+        </p>
+      </div>
+      <div class="HJbox">
+        <p>
+          <a href=https://www.youtube.com/channel/UCIYV4WqC2iJQYFXJG0gAstw>
+            <a href>[신앙프로그램] 제46기 한동사랑의동산 ~~ 와 보라 <br />2025. 2.
+              3(월) 오후 6시 - 2. 6(목) 오후 6시</strong></a>
+        </p>
+      </div>
+      <div class="HJbox">
+        <p>
+          <a href=https://forms.gle/GP1qN3katXRxz6XF6>
+            <strong>[한스트] 2025 HanST Staff 모집 <br />(2025. 2. 24 (월) ~ 2025.
+              2.28 (금) 5일간)</strong></a>
+        </p>
+      </div>
+      <div class="HJbox">
+        <p>
+          <a href=https://www.handong.edu/kor/camplife/inform/school/rule>
+            <strong>[교무팀] 2025-1학기 자유학기 운영 일정 안내 <br />(2025.1.15(수)
+              ~ 27(월))</strong></a>
+        </p>
+      </div>
+      <div class="HJbox">
+        <p>
+          <a href=https://www.handong.edu/kor/camplife/inform/school/tran-connect>
+            <strong>[교무팀](E/B) 2025학년도 1학기 학부선택/전공변경 신청 안내
+              <br />Information on Application for Major Selection/Change for
+              2025</strong></a>
+        </p>
+      </div>
+      <div class="HJbox">
+        <p>
+          <a href=https://www.handong.edu/kor/camplife/inform/school/class-grade>
+            <strong>[학생지원팀] 2024학년도 동계계절학기 사회봉사 교과목 수강신청
+              안내 <br />사회봉사 수강신청 기간 : 11. 22.(금) 17:00 ~ 11.
+              24.(일) 23:00</strong></a>
+        </p>
+      </div>
+      <div class="HJbox">
+        <p>
+          <a href=https://www.handong.edu/kor/camplife/inform/school/schedule>
+            <strong>[교무팀] 2025학년도 학사일정 안내 <br />Information on the
+              academic schedule for the 2025 academic year</strong></a>
+        </p>
+      </div>
+    </div>
+  </section>
 
 
 
 
-  </body>
+</body>
+
 </html>

@@ -335,3 +335,62 @@ document.querySelectorAll('table a').forEach(link => {
   });
 });
 
+// login.html 자바크스립트
+const users = [
+  { id: 'user1', password: 'pass1', username: 'user1' },
+  { id: 'user2', password: 'pass2', username: 'user2' },
+  { id: 'user3', password: 'pass3', username: 'user3' }
+];
+
+function login() {
+  event.preventDefault();
+  const userId = document.getElementById('userId').value;
+  const userPassword = document.getElementById('userPassword').value;
+  //const loginTime = document.getElementById('login_time').value;
+
+  if (!userId || !userPassword) {
+    alert('아이디와 비밀번호를 모두 입력해주세요.');
+    return;
+  }
+
+  const user = users.find(u => u.id === userId && u.password === userPassword);
+
+  if (!user) {
+    alert('아이디 또는 비밀번호가 올바르지 않습니다.');
+    return;
+  }
+
+  //let selectedTime;
+
+  /*if (loginTime) {
+      selectedTime = loginTime;
+  } else {
+
+      const now = new Date();
+      selectedTime = now.getHours().toString().padStart(2, '0') + ':' +
+          now.getMinutes().toString().padStart(2, '0');
+  } */
+
+  window.localStorage.setItem('login_id', userId);
+  //window.localStorage.setItem('login_time', selectedTime);
+  window.localStorage.setItem('username', user.username);
+  window.open('index.html', '_self');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const usernameElement = document.getElementById('Username');
+  if (usernameElement) {
+    write_Welcome();
+  }
+});
+
+function write_Welcome() {
+  const username = window.localStorage.getItem('username'); // 저장된 username 가져오기
+
+  if (username) {
+    document.getElementById('Username').innerText = `Welcome, ${username}!`;
+  } else {
+    document.getElementById('Username').innerText = 'Welcome, Guest!';
+  }
+}
